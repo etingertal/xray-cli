@@ -11,8 +11,7 @@ This is a sample project for demonstrating JFrog Xray CLI capabilites of:
     * M2_HOME environment variable is needed to be set
     * JFrog CLI configuration should be set with an Access Token
 * Artifactory (7.21.3 and above) & Xray (3.29.0 and above) working installation
-* Optional
-    * Maven - for compiling & packaging the Java sample project ("petclinic")
+* Maven - for compiling & packaging the Java sample project ("petclinic")
 
 ## Usage
 
