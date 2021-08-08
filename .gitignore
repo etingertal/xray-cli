@@ -35,3 +35,4 @@ target/*
 .sts4-cache/
 .vscode
 _site/
+.DS_Store
