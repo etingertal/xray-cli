@@ -15,7 +15,7 @@ This is a sample project for demonstrating JFrog Xray CLI capabilites of:
 
 ## Usage
 
-* Dependecies Scanning
+* [Dependecies Scanning CLI](https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Xray#CLIforJFrogXray-AuditingMavenProjects)
 
     * Vulnerabilites scanning (without Policy or Watch defined)
         ```
@@ -31,7 +31,7 @@ This is a sample project for demonstrating JFrog Xray CLI capabilites of:
         ```
         **TODO:** Complete output
 
-* On-Demand Binary scanning
+* [On-Demand Binary scanning CLI](https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Xray#CLIforJFrogXray-ScanningFilesontheLocalFileSystemScanningFiles)
 
     **NOTE:** mvn package is needed for creating the JAR file in the **target/** directory
     
