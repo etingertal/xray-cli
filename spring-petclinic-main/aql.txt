@@ -1,0 +1,9 @@
+{ "files": [
+    {"aql": {
+        "items.find": {
+          "repo":"talet-maven-local",
+          "created":{"$gt" : "2017-07-01"}
+        }
+      } } ]
+}
+
