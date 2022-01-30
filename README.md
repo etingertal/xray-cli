@@ -11,34 +11,54 @@ This is a sample project for demonstrating JFrog Xray CLI capabilites of:
     * M2_HOME environment variable is needed to be set
     * JFrog CLI configuration should be set with an Access Token
 * Artifactory (7.21.3 and above) & Xray (3.29.0 and above) working installation
+    * For Docker scanning: JFrog CLI (2.11.0 and above), Artifactory (7.31.10 and above) & Xray (3.40.3 and above) working installation
 * Maven - for compiling & packaging the Java sample project ("petclinic")
 
 ## Usage
 
 * [Dependecies Scanning CLI](https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Xray#CLIforJFrogXray-AuditingMavenProjects)
 
-    * Vulnerabilites scanning (without Policy or Watch defined)
-        ```
-        cd spring-petclinic-main/
-        jfrog xr audit-mvn
-        ```
-        Output:
-        ![Dependecies Scanning Output](images/ds_output.png)
-    * Violations scanning (based on existing Watch in Xray) in JSON format
-        ```
-        cd spring-petclinic-main/
-        jfrog xr audit-mvn --watches "all-builds" --format json
-        ```
-        Output:
-        ![Dependecies Scanning Output by Watch](images/ds_output_watch.png)
+    * Maven:
+        * Vulnerabilites scanning (without Policy or Watch defined)
+            ```
+            cd spring-petclinic-main/
+            jfrog xr audit-mvn
+            ```
+            Output:
+            ![Dependecies Scanning Output](images/ds_output.png)
+        * Violations scanning (based on existing Watch in Xray) in JSON format
+            ```
+            cd spring-petclinic-main/
+            jfrog xr audit-mvn --watches "all-builds" --format json
+            ```
+            Output:
+            ![Dependecies Scanning Output by Watch](images/ds_output_watch.png)
+
+    * Docker:
+
+        * Vulnerabilites scanning (without Policy or Watch defined)
+            ```
+            cd docker-image/
+            jfrog s thomseno-h2.tar
+            ```
+            Output:
+            ![Docker Dependecies Scanning Output](images/ds_docker_output.png)
+
+        * Violations scanning (based on existing Watch in Xray)
+            ```
+            cd docker-image/
+            jfrog s thomseno-h2.tar --watches "all-builds"
+            ```
+            Output:
+            ![Docker Dependecies Scanning Output by Watch](images/ds_docker_output_watch.png)
 
 * [On-Demand Binary scanning CLI](https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Xray#CLIforJFrogXray-ScanningFilesontheLocalFileSystemScanningFiles)
 
     **NOTE:** ```mvn package``` is needed for creating the JAR file under the **target/** directory
-    
+
     * Vulnerabilites scanning (without Policy or Watch defined)
         ```
-        cd spring-petclinic-main/target/
+        cd docker-image/
         jfrog xr s spring-petclinic-2.4.5.jar
         ```
         Output:
@@ -51,3 +71,6 @@ This is a sample project for demonstrating JFrog Xray CLI capabilites of:
         ```
         Output:
         ![On-Demand Binary Scanning Output by Watch](images/bs_output_watch.png)
+    
+    
+
